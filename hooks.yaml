@@ -1,0 +1,6 @@
+- id: php-lint
+  name: PHP Syntax Check (Quick)
+  description: Run php coding functions not allowed.
+  entry: pre_commit_hooks/main.py
+  language: script
+  files: \.php$
