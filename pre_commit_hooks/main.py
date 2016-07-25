@@ -13,9 +13,6 @@ import argparse
 import sys
 
 
-VERSION = '0.0.0'
-
-
 def check_file_validator(file_name):
     """Check Text files"""
 

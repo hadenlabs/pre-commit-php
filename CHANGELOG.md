@@ -6,7 +6,7 @@ This file uses change log convention from [Keep a CHANGELOG](http://keepachangel
 
 ## [0.0.1] - 2016-07-24
 
-### Fixed:
+### Added:
 
 
 [unreleased]: https://github.com/hadenlabs/pre-commit-php/compare/0.0.1...HEAD
