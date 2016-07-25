@@ -1,11 +1,11 @@
 from setuptools import find_packages, setup
+from pre_commit_hooks import VERSION
 
 setup(
     name='pre_commit_php',
     description='Some out-of-the-box hooks for pre-commit.',
     url='https://github.com/hadenlabs/pre-commit-php',
-    version='0.0.2',
-
+    version='.'.join(map(str, VERSION)),
     author='Luis Alberto Mayta',
     author_email='slovacus@gmail.com',
 
