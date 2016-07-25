@@ -24,22 +24,24 @@ def check_file_validator(file_name):
 
     list_lines = []
 
-    with open(file_name, 'r') as filename:
-        for line, value in enumerate(filename):
-            result = [i for i in functions_black_list if i in value]
-            if result:
-                list_lines.append(
-                    (file_name, line, value,)
-                )
+    for line, value in enumerate(file_name):
+        result = [i for i in functions_black_list if i in value]
+        if result:
+            list_lines.append(
+                (file_name, line, value,)
+            )
 
     return list_lines
 
 
 def main():
     """ Main functions handling configuration files etc"""
+
     parser = argparse.ArgumentParser(description='Process validation file.')
-    parser.add_argument('file', help='file to validation')
+    parser.add_argument('file', type=argparse.FileType('r'),
+                        help='file to validation')
     args = parser.parse_args()
+
     result = check_file_validator(file_name=args.file)
     if result:
         print('Se encontraron los siguientes Errores')
