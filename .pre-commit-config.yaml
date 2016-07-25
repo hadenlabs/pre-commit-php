@@ -1,0 +1,31 @@
+# Pre-commit
+# @see http://pre-commit.com/
+
+- repo: git@github.com:pre-commit/pre-commit-hooks
+  sha: master
+  hooks:
+    - id: check-yaml
+      files: \.(yaml|yml)$
+    - id: check-merge-conflict
+    - id: trailing-whitespace
+      files: ^tf|-|\.(py|tfvars|tf|tfenv|env|yml|yaml|pem|key|mock)$
+    - id: check-case-conflict
+    - id: check-ast
+    - id: debug-statements
+    - id: autopep8-wrapper
+      args:
+      - -i
+      - --ignore=E501
+    - id: double-quote-string-fixer
+    - id: check-docstring-first
+    - id: pretty-format-json
+    - id: requirements-txt-fixer
+    - id: name-tests-test
+
+- repo: git://github.com/pre-commit/mirrors-pylint
+  sha: 029186c31774c24af446c428eafc59ce8980dcb9
+  hooks:
+    - id: pylint
+      args:
+      - --rcfile=.pylintrc
+      exclude: setup.py
